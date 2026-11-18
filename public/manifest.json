@@ -1,0 +1,17 @@
+{
+  "name": "Sổ Thu Chi",
+  "short_name": "Thu Chi",
+  "description": "Ứng dụng quản lý thu chi cá nhân offline",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080c",
+  "theme_color": "#07080c",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

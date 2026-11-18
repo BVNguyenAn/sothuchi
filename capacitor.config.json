@@ -1,0 +1,6 @@
+{
+  "appId": "com.dev.thuchi",
+  "appName": "Sổ Thu Chi",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

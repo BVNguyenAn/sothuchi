@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Sổ Thu Chi</title>
+    
+    <!-- PWA & iOS Safari Settings -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Thu Chi" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <meta name="theme-color" content="#07080c" />
+    
+    <style>
+      /* Prevent iOS bounce & pull-to-refresh when in standalone mode */
+      html, body {
+        overscroll-behavior-y: none;
+        background-color: #07080c;
+        color: #f1f5f9;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* iOS safe areas */
+      .pt-safe { padding-top: env(safe-area-inset-top, 16px); }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 20px); }
+    </style>
+  </head>
+  <body class="bg-bg text-text antialiased selection:bg-zinc-800">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Register Service Worker for 100% offline access
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
